@@ -4,11 +4,9 @@ module.exports = {
     rutaLogin:(req,res)=>{
         let user=req.body.usuario;
         let pwd=req.body.contraseña;
-        console.log(req.body);
         console.log(req.body.usuario);
         if (user=='' || pwd==''){
             res.json({mensaje:'Faltan datos'});
-            console.log(req.body);
         }
         else
         {

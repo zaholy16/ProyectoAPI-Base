@@ -10,12 +10,11 @@ btnIngresa.addEventListener("click", () =>{
     fetch('http://localhost:1338/miApi/login/', {
         method: 'POST',
         body: JSON.stringify(login),
-        headers: {'Content-Type': 'aplication/json'
+        headers: {'Content-Type': 'application/json'
         }
     })
     .then(response => response.json())
-    .then((json)=>{
-        console.log(json);
+    .then(json=>{
         console.log(login);
         if(json.mensaje=='Autenticacion correcta')
         {
