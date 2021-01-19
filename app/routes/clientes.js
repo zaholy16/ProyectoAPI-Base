@@ -21,7 +21,7 @@ router.post('/',function(req,res){
     clientesController.añadirCliente(req,res);
 })
 
-router.post('/compras/:id',function(req,res){
+router.post('/compras/:id/:idJ',function(req,res){
     //res.json({message: 'Vas a añadir un juego que compro un cliente'});
     clientesController.añadirJuegosClientes(req,res);
 })

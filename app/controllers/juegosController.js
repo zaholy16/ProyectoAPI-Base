@@ -41,16 +41,5 @@ module.exports = {
             else
                 res.json(err);
         })
-    },
-
-    borrarJuegos:(req,res)=>{
-        let id=req.params.id;
-        mysql.query('UPDATE videojuegos set estado = "Agotado" where id_juego = ?',id, (err,rows,fields)=>{
-            if(!err){
-                res.json({mensaje:'Juego Temporalmente Agotado'});
-            }
-            else
-                res.json(err);
-        });
     }
 }

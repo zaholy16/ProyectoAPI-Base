@@ -15,7 +15,6 @@ btnIngresa.addEventListener("click", () =>{
     })
     .then(response => response.json())
     .then(json=>{
-        console.log(login);
         if(json.mensaje=='Autenticacion correcta')
         {
             window.alert("Acceso correcto");

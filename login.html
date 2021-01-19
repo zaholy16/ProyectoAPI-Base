@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style/estilos.css" type="text/css">
-    <title>CRUD</title>
+    <title>Log In</title>
 </head>
-<body>
-    <div>
-        <h2>Login</h2>
+<body background="style/fondo.jpg">
+    <div id="divLogin">
         <form id="login">
-            
-            <div> 
-                <label for="usuario">Usuario:
-                <input type="text" id="usuario" placeholder="Ingresa tu usuario">
-            </label><br></div>
-           
-            <label for="contraseña">Contraseña:
-                <input type="text" id="contraseña" placeholder="Ingresa tu contraseña">
+        <div>     
+            <h2 id=texLogIn>Log in</h2>
+            <label for="usuario" class="labels">Usuario:
+                <br><input type="text" class="inputs" id="usuario" placeholder="Ingresa tu usuario" required>
             </label><br>
-            <br><button type="button" class="btn btn-outline-success" id="btnLogin">Ingresar</button>
+           
+            <label for="contraseña" class="labels">Contraseña:
+                <br><input type="password" class="inputs" id="contraseña" placeholder="Ingresa tu contraseña" required>
+            </label><br>
+
+            <br><button type="button" class="btn btn-dark" id="btnLogin">Ingresar</button>
+        </div>
         </form>
     </div>
     <script src="js/appLogin.js"></script>

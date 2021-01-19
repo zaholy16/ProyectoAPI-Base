@@ -1,9 +1,42 @@
-#login
+body
+{
+    background-size: 1010px;
+    background-repeat: repeat;
+    background-position: initial;
+}
+
+#divLogin
 {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 180px;
+    margin-top: 120px;
+}
 
+#texLogIn{
+    font-size: 28px;
+    font-style: oblique;
+    margin-bottom: 28px;
+}
+
+.inputs{
+    width: 320px;
+    height: 40px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.labels
+{
+    font-style: italic initial;
+    font-size: 19px;
+    justify-content: center;
+}
+
+#btnLogin
+{
+    width: 320px;
+    height: 40px;
+    font-family: sans-serif;
 }

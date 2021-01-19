@@ -9,56 +9,84 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <title>CRUD</title>
+    <link rel="stylesheet" href="style/estilosPP.css" type="text/css">
+    <title>SIstema Web</title>
 </head>
-<body>
-    <h2>¡Bienvenido!</h2>
-        <div>
-            <h3>Buscar clientes:</h3>
-            <button type="=button" id="btnCargar">Cargar</button>
-
-            <label>
-                Selecciona un cliente:
-                <select id="idClientes"></select>
-
+<body background="style/fondito.jpg">
+    <MARQUEE><p id="texBi" class="t-stroke t-shadow">¡Bienvenido! </p></MARQUEE>
+        <div id="busqueda">
+            <br><br><label class="label">
+            <button class="btns" class="cargar" type="button" id="btnCargar">Cargar clientes</button>
+            <button class="btns" class="cargar" type="button" id="btnCargarJuegos">Cargar juegos</button>
+            </label>
+        </div>
+        <div id="busqueda">
+            <div>
+                <label class="label">
+                    <select class="select" id="idClientes"></select>
+                </label>
+                    <button type="button" class="botonOcul" id="btnOC">Ocultar</button>
+            </div>
             <div id="datosCliente"></div>
         </div>
-        <div>
-            <p><b>Opciones:</p></b>
-            <button type="=button" id="btnListar">Mostrar todos los clientes</button>
-            <button type="=button" id="btnAñadir">Añadir</button>
-            <button type="=button" id="btnEditar">Editar</button>
-            <button type="=button" id="btnEliminar">Eliminar</button>
+
+        <div id="busqueda">
+            <div>
+                <label class="label">
+                    <select class="select" id="idJuego"></select>
+                </label>
+                    <button type="button" class="botonOcul" id="btnOJ">Ocultar</button>
+                    <div id="datosJuegos"></div>
+            </div>
         </div>
 
-        <form display="style/none">
-            <h3>Formulario:</h3>
-            <label for="nombre">Nombre:
-                <input type="text" name = "nombre" id="nombre" placeholder="Nombre">
-            </label><br>
-            <label for="correo">Correo:
-                <input type="email" id="correo" name="correo" placeholder="Correo"> 
-            </label><br>
-            <label for="telefono">Telefono:
-                <input type="tel" id="telefono" name="telefono" placeholder="telefono"> 
-            </label><br>
-            <label for="edad">Edad:
-                <input type="text" id="edad" name="edad" placeholder="edad "> 
-            </label><br>
-            <button type="reset">Reset</button><br>
-        </form><br>
-
-        <div>
-            <button id="btnCompra">Ver compras del cliente</button>
-            <div id="compras"></div>
+        <div id="divB">
+                <button id="btnCompraJuego" class="btns">Añadir compra</button>
         </div><br>
-            
-    
-        <div id="clientes"></div>
-        <p>¿Te intesaria conocer mas videojuegos?</p>
-        <button type="=button" id="btnJuegos">Ver catalogo de Juegos</button>
-        <div id="juegos"></div>
- 
+
+        <div id="divB">
+            <div >
+                <button id="btnCompra" class="btns">Ver compras del cliente</button>
+                <button type="button" class="botonOcul" id="btnOCo">Ocultar</button>
+                <br>
+                <div class="info" id="compras"></div>
+            </div>
+        </div><br>
+
+        <center><p id="texOpciones"><u><b>OPCIONES: CLIENTES</p></b></u></center>
+        <div id="divbotones">
+            <br><br>
+            <p><button type="=button" class="botones" id="btnAñadir">Añadir</button>
+            <button type="button" class="botones" id="btnEditar">Editar</button>
+            <button type="button" class="botones" id="btnEliminar">Eliminar</button>
+        </div>
+
+        <div id="divB">
+        <form id="formulario">
+            <p><label class="labels" for="nombre">Nombre:
+                <input type="text" name ="nombre" id="nombre" class="inputs" placeholder="Nombre" required>
+            </label><br>
+            <label class="labels" for="correo">Correo:
+                <input type="email" id="correo" name="correo" class="inputs" placeholder="ejemplo@ejemplo.mx" required> 
+            </label><br>
+            <label class="labels" for="telefono">Telefono:
+                <input type="tel" id="telefono" name="telefono" class="inputs" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="312-100-1234" required > 
+            </label><br>
+            <label class="labels" for="edad">Edad:
+                <input type="number" id="edad" name="edad" class="inputs" placeholder="Edad" required> 
+            </label ><br>
+            <button class="botones" type="reset">Reset</button><br>
+        </form><br>
+        </div>
+
+       <div class="infoAPI3ros">
+            <label>¿Te intesaria conocer más videojuegos?</label>
+            <button type="button" class="infoAPI3ros" id="btnJuegos">Ver catalogo de Juegos</button>
+            <button type="button" class="infoAPI3ros" id="btnOA">Ocultar</button>
+       </div>
+       
+       <div id="juegos"></div>
+
     <script src="js/app.js"></script>
 </body>
 </html>

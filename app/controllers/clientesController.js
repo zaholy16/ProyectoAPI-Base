@@ -41,12 +41,19 @@ module.exports = {
     editarClientes:(req,res)=>{
         let {nombre,correo,telefono,edad} = req.body;
         let id=req.params.id;
+        if(req.body.nombre=='' || req.body.correo=='' || req.body.edad=='' || req.body.telefono=='')
+        {
+            res.json({mensaje:'Faltan datos'});
+        }
+        else
+        {
         mysql.query('UPDATE clientes set nombre = ?, correo = ?, telefono = ?, edad = ? where id_cliente = ?',[nombre,correo,telefono,edad,id],(err,rows,fields)=>{
             if(!err)
-                res.json({messaje: "Cliente Editado"});
+                res.json({mensaje: "Cliente Editado"});
             else
                 res.json(err);
-        })
+            })
+        }
     },
 
     borrarClientes:(req,res)=>{
@@ -54,10 +61,10 @@ module.exports = {
         //aqui mando llamar al procedimiento 
         mysql.query('CALL borraroNoClientes (?)',id, (err,rows,fields)=>{
             if(!err){
-                res.json (rows);
+                res.json({mensaje: "Cliente Eliminado"});;
             }
             else
-                res.json(err);
+                res.json({mensaje: "Error. No puedes eliminar a este cliente, ya que tiene deudas"});
         });
     },
 
@@ -75,11 +82,12 @@ module.exports = {
     },
 
     añadirJuegosClientes:(req,res)=>{
-        let id_juego=req.body.id_juego;
+        //let id_juego=req.body.id_juego;
+        let id_juego=req.params.idJ;
         let id=req.params.id;
         mysql.query('INSERT INTO compras SET id_cliente = ?, id_juego = ?',[id,id_juego], (err,rows,fields)=>{
             if(!err)
-                res.json({messaje:'Compra Agregada'});
+                res.json({mensaje:'Compra Agregada'});
             else
                 res.json(err);
         })
